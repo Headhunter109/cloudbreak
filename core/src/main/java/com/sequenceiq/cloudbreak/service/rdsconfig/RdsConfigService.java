@@ -60,7 +60,7 @@ public class RdsConfigService {
         }
     }
 
-    @PostAuthorize("hasPermission(returnObject,'read')")
+    //@PostAuthorize("hasPermission(returnObject,'read')")
     public RDSConfig get(Long id) {
         RDSConfig rdsConfig = rdsConfigRepository.findById(id);
         if (rdsConfig == null) {

@@ -51,7 +51,7 @@ public class BlueprintService {
         }
     }
 
-    @PostAuthorize("hasPermission(returnObject,'read')")
+    //@PostAuthorize("hasPermission(returnObject,'read')")
     public Blueprint get(Long id) {
         Blueprint blueprint = blueprintRepository.findOne(id);
         if (blueprint == null) {
@@ -60,7 +60,7 @@ public class BlueprintService {
         return blueprint;
     }
 
-    @PostAuthorize("hasPermission(returnObject,'read')")
+    //@PostAuthorize("hasPermission(returnObject,'read')")
     public Blueprint getByName(String name, CbUser user) {
         Blueprint blueprint = blueprintRepository.findByNameInAccount(name, user.getAccount(), user.getUsername());
         if (blueprint == null) {

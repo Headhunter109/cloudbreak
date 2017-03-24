@@ -84,7 +84,7 @@ public class SssdConfigService {
         }
     }
 
-    @PostAuthorize("hasPermission(returnObject,'read')")
+    //@PostAuthorize("hasPermission(returnObject,'read')")
     public SssdConfig get(Long id) {
         SssdConfig sssdConfig = sssdConfigRepository.findOne(id);
         if (sssdConfig == null) {

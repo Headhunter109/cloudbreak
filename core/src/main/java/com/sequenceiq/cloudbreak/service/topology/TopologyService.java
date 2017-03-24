@@ -47,7 +47,7 @@ public class TopologyService {
     @Inject
     private NetworkRepository networkRepository;
 
-    @PostAuthorize("hasPermission(returnObject,'read')")
+    //@PostAuthorize("hasPermission(returnObject,'read')")
     public Topology get(Long id) {
         return getById(id);
     }

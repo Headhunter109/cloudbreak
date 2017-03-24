@@ -61,7 +61,7 @@ public class CredentialService {
         }
     }
 
-    @PostAuthorize("hasPermission(returnObject,'read')")
+    //@PostAuthorize("hasPermission(returnObject,'read')")
     public Credential get(Long id) {
         Credential credential = credentialRepository.findOne(id);
         if (credential == null) {

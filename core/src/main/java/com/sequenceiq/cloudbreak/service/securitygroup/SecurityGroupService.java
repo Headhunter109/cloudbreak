@@ -8,7 +8,6 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.stereotype.Service;
 
 import com.sequenceiq.cloudbreak.common.type.APIResourceType;
@@ -46,7 +45,7 @@ public class SecurityGroupService {
         }
     }
 
-    @PostAuthorize("hasPermission(returnObject,'read')")
+    //@PostAuthorize("hasPermission(returnObject,'read')")
     public SecurityGroup get(Long id) {
         SecurityGroup securityGroup = groupRepository.findById(id);
         if (securityGroup == null) {

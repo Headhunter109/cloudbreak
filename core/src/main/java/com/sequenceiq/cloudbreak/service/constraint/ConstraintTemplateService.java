@@ -51,7 +51,7 @@ public class ConstraintTemplateService {
         }
     }
 
-    @PostAuthorize("hasPermission(returnObject,'read')")
+    //@PostAuthorize("hasPermission(returnObject,'read')")
     public ConstraintTemplate get(Long id) {
         ConstraintTemplate constraintTemplate = constraintTemplateRepository.findOne(id);
         if (constraintTemplate == null) {
@@ -88,7 +88,7 @@ public class ConstraintTemplateService {
         delete(constraintTemplate, user);
     }
 
-    @PostAuthorize("hasPermission(returnObject,'read')")
+    //@PostAuthorize("hasPermission(returnObject,'read')")
     public ConstraintTemplate getPublicTemplate(String name, CbUser user) {
         ConstraintTemplate constraintTemplate = constraintTemplateRepository.findOneByName(name, user.getAccount());
         if (constraintTemplate == null) {
