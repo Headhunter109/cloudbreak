@@ -12,7 +12,7 @@ public interface HistoryRepository extends CrudRepository<History, Long> {
 
     List<History> findAllByCluster(@Param("id") Long id);
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     History findByCluster(@Param("clusterId") Long clusterId, @Param("historyId") Long historyId);
 
 }

@@ -37,7 +37,7 @@ public class SimpleAccountPreferencesService implements AccountPreferencesServic
     }
 
     @Override
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public AccountPreferences saveOne(CbUser user, AccountPreferences accountPreferences) {
         accountPreferences.setAccount(user.getAccount());
         return repository.save(accountPreferences);
@@ -71,7 +71,7 @@ public class SimpleAccountPreferencesService implements AccountPreferencesServic
     }
 
     @Override
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public AccountPreferences getOneById(Long id, CbUser user) {
         AccountPreferences accountPreferences = repository.findOne(id);
         if (!user.getRoles().contains(CbUserRole.ADMIN)) {

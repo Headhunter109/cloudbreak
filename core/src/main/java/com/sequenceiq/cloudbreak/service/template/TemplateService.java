@@ -49,7 +49,7 @@ public class TemplateService {
         }
     }
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public Template get(Long id) {
         Template template = templateRepository.findOne(id);
         if (template == null) {
@@ -90,7 +90,7 @@ public class TemplateService {
         }
     }
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public Template getPublicTemplate(String name, CbUser user) {
         Template template = templateRepository.findOneByName(name, user.getAccount());
         if (template == null) {

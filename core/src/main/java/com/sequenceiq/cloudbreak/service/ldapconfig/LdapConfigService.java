@@ -40,7 +40,7 @@ public class LdapConfigService {
         }
     }
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public LdapConfig get(Long id) {
         LdapConfig ldapConfig = ldapConfigRepository.findOne(id);
         if (ldapConfig == null) {

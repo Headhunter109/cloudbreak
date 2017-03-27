@@ -11,10 +11,10 @@ import com.sequenceiq.cloudbreak.domain.Credential;
 @EntityType(entityClass = Credential.class)
 public interface CredentialRepository extends CrudRepository<Credential, Long> {
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     Credential findOne(@Param("id") Long id);
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     Credential findOneByName(@Param("name") String name, @Param("account") String account);
 
     Set<Credential> findForUser(@Param("user") String user);

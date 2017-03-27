@@ -23,6 +23,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
@@ -185,7 +186,7 @@ public class StackService {
         return conversionService.convert(stack, StackResponse.class);
     }
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public Stack get(Long id) {
         Stack stack = stackRepository.findOne(id);
         if (stack == null) {
@@ -259,7 +260,7 @@ public class StackService {
         return conversionService.convert(stack, StackResponse.class);
     }
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public StackResponse getPublicStackJsonByName(String name, CbUser cbUser) {
         Stack stack = stackRepository.findOneByName(name, cbUser.getAccount());
         if (stack == null) {
@@ -268,7 +269,7 @@ public class StackService {
         return conversionService.convert(stack, StackResponse.class);
     }
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public Stack getPublicStack(String name, CbUser cbUser) {
         Stack stack = stackRepository.findOneByName(name, cbUser.getAccount());
         if (stack == null) {

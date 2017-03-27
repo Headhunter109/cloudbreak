@@ -10,10 +10,10 @@ import com.sequenceiq.periscope.domain.TimeAlert;
 
 public interface TimeAlertRepository extends CrudRepository<TimeAlert, Long> {
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     TimeAlert findOne(@Param("id") Long id);
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     TimeAlert findByCluster(@Param("alertId") Long alertId, @Param("clusterId") Long clusterId);
 
     List<TimeAlert> findAllByCluster(@Param("clusterId") Long clusterId);

@@ -11,10 +11,10 @@ import com.sequenceiq.cloudbreak.domain.Network;
 @EntityType(entityClass = Network.class)
 public interface NetworkRepository extends CrudRepository<Network, Long> {
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     Network findOneById(@Param("id") Long id);
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     Network findOneByName(@Param("name") String name, @Param("account") String account);
 
     Network findByNameForUser(@Param("name") String name, @Param("owner") String userId);

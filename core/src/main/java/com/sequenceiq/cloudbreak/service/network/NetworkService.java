@@ -46,7 +46,7 @@ public class NetworkService {
         }
     }
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public Network get(Long id) {
         return getById(id);
     }

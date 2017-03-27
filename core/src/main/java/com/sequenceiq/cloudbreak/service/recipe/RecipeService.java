@@ -49,7 +49,7 @@ public class RecipeService {
         }
     }
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public Recipe get(Long id) {
         Recipe recipe = recipeRepository.findOne(id);
         if (recipe == null) {

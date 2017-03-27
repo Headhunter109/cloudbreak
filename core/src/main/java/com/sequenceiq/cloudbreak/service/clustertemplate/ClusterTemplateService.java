@@ -45,7 +45,7 @@ public class ClusterTemplateService {
         }
     }
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public ClusterTemplate get(Long id) {
         ClusterTemplate clusterTemplate = clusterTemplateRepository.findOne(id);
         if (clusterTemplate == null) {
@@ -54,7 +54,7 @@ public class ClusterTemplateService {
         return clusterTemplate;
     }
 
-    //@PostAuthorize("hasPermission(returnObject,'read')")
+    @PostAuthorize("hasPermission(returnObject,'read')")
     public ClusterTemplate getByName(String name, CbUser user) {
         ClusterTemplate clusterTemplate = clusterTemplateRepository.findByNameInAccount(name, user.getAccount(), user.getUsername());
         if (clusterTemplate == null) {
