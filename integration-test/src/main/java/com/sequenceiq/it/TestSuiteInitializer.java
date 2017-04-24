@@ -1,11 +1,13 @@
 package com.sequenceiq.it;
 
+import static org.yaml.snakeyaml.tokens.Token.ID.Value;
+
 import javax.inject.Inject;
 
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.util.StringUtils;
 import org.testng.ITestContext;
