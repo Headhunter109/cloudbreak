@@ -212,7 +212,6 @@ public class StackService {
         return stack;
     }
 
-    @Transactional(Transactional.TxType.REQUIRES_NEW)
     public Stack getById(Long id) {
         Stack retStack = stackRepository.findOneWithLists(id);
         if (retStack == null) {
